@@ -2,10 +2,10 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: ingress-nginx
-  namespace: flux-system        # HelmRelease stays in flux-system (Flux controllers watch here)
+  namespace: flux-system        
 spec:
   interval: 5m
-  targetNamespace: ingress      # ✅ This is where the chart will be installed
+  targetNamespace: ingress
   chart:
     spec:
       chart: ingress-nginx
@@ -15,7 +15,7 @@ spec:
         name: ingress-nginx
         namespace: flux-system
   install:
-    createNamespace: true       # ✅ Creates the ingress namespace if missing
+    createNamespace: true 
   values:
        controller:
       replicaCount: 1
