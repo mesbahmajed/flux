@@ -20,4 +20,4 @@ spec:
     controller:
       replicaCount: 1
       service:
-         type: LoadBalancer
+        type: LoadBalancer
