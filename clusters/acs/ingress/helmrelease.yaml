@@ -3,6 +3,9 @@ kind: HelmRelease
 metadata:
   name: ingress-nginx
   namespace: flux-system
+  # Optional: add this annotation if you want the Kustomization patch (in your Spec.Patches) to target it.
+  annotations:
+    clusterconfig.azure.com/use-managed-source: "true"
 spec:
   interval: 5m
   targetNamespace: ingress
@@ -16,7 +19,7 @@ spec:
         namespace: flux-system
   install:
     createNamespace: true
-  values:
+   values:
     controller:
       replicaCount: 1
       service:
