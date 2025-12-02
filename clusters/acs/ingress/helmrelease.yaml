@@ -32,10 +32,6 @@ spec:
       service:
         type: LoadBalancer
         annotations: {}
-      metrics:
-        enabled: true
-        serviceMonitor:
-          enabled: true
       admissionWebhooks:
         enabled: true
       watchIngressWithoutClass: true
