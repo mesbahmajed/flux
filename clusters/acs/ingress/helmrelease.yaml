@@ -31,16 +31,3 @@ spec:
         type: RollingUpdate
       service:
         type: LoadBalancer
-        annotations: {}
-      admissionWebhooks:
-        enabled: true
-      watchIngressWithoutClass: true
-      ingressClassResource:
-        name: nginx
-        enabled: true
-        default: true
-      config:
-        use-forwarded-headers: "true"
-        compute-full-forwarded-for: "true"
-      extraArgs:
-        default-ssl-certificate: ""
